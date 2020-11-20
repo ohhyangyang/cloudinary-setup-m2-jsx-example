@@ -1,7 +1,13 @@
-# Cloudinary Setup - NodeJS, Express, SSR
+# Cloudinary Setup - Express & SSR with JSX
+
+
+
+<br>
+
 
 
 ### 1. Create free Cloudinary account 
+
 Register for free here: <https://cloudinary.com/users/register/free>
 
 
@@ -30,7 +36,39 @@ npm install cloudinary@1.21.0 multer-storage-cloudinary@2.2.1 multer@1.4.2 --sav
 
 
 
-### 3. Configure Cloudinary & Multer
+
+
+
+
+### 3. Add the Cloudinary keys to the `.env` file
+
+Add the following fields to your `.env` and update the variable values. 
+
+You will find the example of the variable names you should create in the `.env.sample` file.
+
+Copy the variable values coming from your Cloudinary account Dashboard.
+
+![](https://i.imgur.com/jtDXs3R.png)
+
+
+
+
+
+```bash
+CLOUDINARY_CLOUD_NAME=paste-your-cloudinary-cloud-name-here
+CLOUDINARY_API_KEY=paste-your-cloudinary-api-key-here
+CLOUDINARY_API_SECRET=paste-your-cloudinary-api-secret-here
+```
+
+
+
+
+
+<br>
+
+
+
+### 4. Configure Cloudinary & Multer
 
 In your terminal:
 ```
@@ -77,7 +115,7 @@ module.exports = parser;
 
 
 
-### 4. Create/update the `Signup` view form
+### 5. Create/update the `Signup` view form
 
 * Add the attribute `encType="multipart/form-data"` to your form (in HTML `enctype`)   .
 
@@ -121,7 +159,7 @@ module.exports = Signup;
 
 
 
-### 5. Inject the parsing middleware into the route
+### 6. Inject the parsing middleware into the route
 
 In the router where we want to upload the image: 
 * Import the parsing middleware  we created in `config/cloudinary.js`.
@@ -175,7 +213,7 @@ authRouter.post('/signup', parser.single('profilepic'), (req, res, next) => {
 
 
 
-### 6. Display the uploaded photo in `Profile` view
+### 7. Display the uploaded photo in `Profile` view
 
 
 
