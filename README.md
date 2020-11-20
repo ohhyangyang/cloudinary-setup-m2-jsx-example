@@ -19,11 +19,13 @@ Register for free here: <https://cloudinary.com/users/register/free>
 ### 2. Install packages
 
 Install the following 3 packages in your project folder:
+
 * [cloudinary](https://www.npmjs.com/package/cloudinary)
 * [multer-storage-cloudinary](https://www.npmjs.com/package/multer-storage-cloudinary)
 * [multer](https://www.npmjs.com/package/multer) => like body-parser, Multer parses incoming bodies but also allows us to parse files  (unlike body-parser that parses only data)
 
 In your terminal:
+
 ```
 npm install cloudinary@1.21.0 multer-storage-cloudinary@2.2.1 multer@1.4.2 --save --save-exact
 ```
@@ -46,13 +48,6 @@ Add the following fields to your `.env` and update the variable values.
 
 You will find the example of the variable names you should create in the `.env.sample` file.
 
-Copy the variable values coming from your Cloudinary account Dashboard.
-
-![](https://i.imgur.com/jtDXs3R.png)
-
-
-
-
 
 ```bash
 CLOUDINARY_CLOUD_NAME=paste-your-cloudinary-cloud-name-here
@@ -60,6 +55,12 @@ CLOUDINARY_API_KEY=paste-your-cloudinary-api-key-here
 CLOUDINARY_API_SECRET=paste-your-cloudinary-api-secret-here
 ```
 
+<br>
+
+
+Copy the variable values coming from your Cloudinary account Dashboard.
+
+![](https://i.imgur.com/jtDXs3R.png)
 
 
 
@@ -71,6 +72,7 @@ CLOUDINARY_API_SECRET=paste-your-cloudinary-api-secret-here
 ### 4. Configure Cloudinary & Multer
 
 In your terminal:
+
 ```
 mkdir config 
 touch config/cloudinary.js
@@ -162,6 +164,7 @@ module.exports = Signup;
 ### 6. Inject the parsing middleware into the route
 
 In the router where we want to upload the image: 
+
 * Import the parsing middleware  we created in `config/cloudinary.js`.
 * Add it as a middleware (a second argument ) prior to the route handler function that handles the POST request.
 
@@ -223,4 +226,4 @@ authRouter.post('/signup', parser.single('profilepic'), (req, res, next) => {
 
 ### Documentation
 
-[Cloudinary](https://cloudinary.com/documentation)
+[Cloudinary](
