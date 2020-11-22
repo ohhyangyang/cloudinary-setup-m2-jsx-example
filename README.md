@@ -127,7 +127,7 @@ module.exports = parser;
 
 ##### `views/Signup.jsx`
 
-```html
+```jsx
 const React = require("react");
 const Layout = require("./Layout");
 
