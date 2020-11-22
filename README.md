@@ -135,7 +135,7 @@ function Signup() {
   return (
     <Layout title="Signup Page">
       <h2>Cloudinary Example</h2>
-      <form action='/auth/signup' method='POST' enctype="multipart/form-data" >
+      <form action='/auth/signup' method='POST' encType="multipart/form-data" >
   
         <label>Email</label>
         <input type='text' name='email' />
