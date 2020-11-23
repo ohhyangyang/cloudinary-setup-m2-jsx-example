@@ -187,7 +187,8 @@ authRouter.post('/signup', parser.single('profilepic'), (req, res, next) => {
   
   
   // The URL of the image uploaded to the cloudinary servers by the middleware becomes available via the `req.file.secure_url` property
-  const imageUrl = req.file.secure_url;
+  let imageUrl;
+  if (req.file) imageUrl = req.file.secure_url; // check if the image was selected/uploaded
   
   const newUser = { email, password, image: imageUrl };
 
